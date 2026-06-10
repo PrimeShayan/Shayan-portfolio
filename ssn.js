@@ -1,4 +1,3 @@
-// 3D card effect
 
 const card = document.querySelector(".card");
 
@@ -15,7 +14,6 @@ document.addEventListener("mousemove",(e)=>{
 
 });
 
-// Stars
 
 const stars = document.querySelector(".stars");
 

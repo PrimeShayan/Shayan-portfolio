@@ -1,4 +1,3 @@
-
 (function () {
 "use strict";
 
@@ -31,10 +30,10 @@ function bolt(ctx, x1, y1, x2, y2, depth) {
   ctx.lineTo(bx, by);
   ctx.lineTo(x2, y2);
   ctx.strokeStyle = depth > 2
-    ? 'rgba(160,80,255,' + (0.09 * depth) + ')'
-    : 'rgba(255,255,255,' + (0.08 * depth) + ')';
+    ? 'rgba(80,120,200,' + (0.09 * depth) + ')'
+    : 'rgba(230,235,250,' + (0.08 * depth) + ')';
   ctx.lineWidth   = depth * 0.45;
-  ctx.shadowColor = '#9900ff';
+  ctx.shadowColor = '#3a5a8c';
   ctx.shadowBlur  = 18;
   ctx.stroke();
   if (depth > 1) {
@@ -97,7 +96,7 @@ document.addEventListener('mousemove', function (e) {
   if (now - lastSpark < 40) return;
   lastSpark = now;
 var spark = document.createElement('div');
-var isRed = Math.random() > 0.5;
+var isBlood = Math.random() > 0.5;
 spark.style.position     = 'fixed';
 spark.style.left         = e.clientX + 'px';
 spark.style.top          = e.clientY + 'px';
@@ -107,12 +106,12 @@ spark.style.borderRadius = '50%';
 spark.style.pointerEvents= 'none';
 spark.style.zIndex       = '9999';
 spark.style.transform    = 'translate(-50%,-50%)';
-spark.style.background   = isRed
-  ? 'radial-gradient(circle, rgba(220,30,0,1), transparent)'
-  : 'radial-gradient(circle, rgba(170,60,255,1), transparent)';
-spark.style.boxShadow    = isRed
-  ? '0 0 8px 3px rgba(180,0,0,0.7)'
-  : '0 0 8px 3px rgba(140,0,255,0.6)';
+spark.style.background   = isBlood
+  ? 'radial-gradient(circle, rgba(140,10,20,1), transparent)'
+  : 'radial-gradient(circle, rgba(80,120,200,1), transparent)';
+spark.style.boxShadow    = isBlood
+  ? '0 0 8px 3px rgba(120,10,20,0.7)'
+  : '0 0 8px 3px rgba(70,100,180,0.6)';
 spark.style.transition   = 'opacity 0.45s, transform 0.45s';
 document.body.appendChild(spark);
 
